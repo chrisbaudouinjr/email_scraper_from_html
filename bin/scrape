@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+
+import email_scraper_from_html
+import argparse
+import os
+
+parser = argparse.ArgumentParser(description='Extract emails from html file.')
+parser.add_argument('filepath', metavar='fp', type=str, nargs="+",
+                   help='drag and drop the .html file you want to extract emails from')
+
+args = parser.parse_args()
+for filepath in args.filepath:
+    print('scraping '+os.path.split(filepath)[1])
+    filepath = filepath.replace('\\','')
+    email_scraper_from_html.scrape_for_emails(filepath)
+print('Saved '+str(len(args.filepath))+' csv files to '+str(os.path.split(filepath)[0])+'/processed_files.')
