@@ -1,4 +1,3 @@
 .DS_Store
-./html/*.html
-./processed_html/*.html
-./output/*.csv
+**/*.html
+**/*.csv
