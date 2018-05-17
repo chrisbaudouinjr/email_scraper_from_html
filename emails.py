@@ -16,6 +16,6 @@ for roots, dirs, files in os.walk('./html'):
             df = pd.DataFrame(data=emails)
             filename = name.strip('.html') + '_emails.csv'
             df.to_csv(os.path.join('./output',filename),index=False,header=False)
-            os.rename(filepath,os.path.join('./processed_html', name))
+            os.rename(filepath,os.path.join('./processed_files', name))
 
 
