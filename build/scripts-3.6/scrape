@@ -7,10 +7,12 @@ import os
 parser = argparse.ArgumentParser(description='Extract emails from html file.')
 parser.add_argument('filepath', metavar='fp', type=str, nargs="+",
                    help='drag and drop the .html file you want to extract emails from')
+parser.add_argument('at_symbol', metaavar, 'symbol', type=str, help='use @ to parse normal emails or AT to parse emails with abc AT gmail.com format')
 
 args = parser.parse_args()
 for filepath in args.filepath:
     print('scraping '+os.path.split(filepath)[1])
     filepath = filepath.replace('\\','')
-    email_scraper_from_html.scrape_for_emails(filepath)
+
+    email_scraper_from_html.scrape_for_emails(filepath, args.at_symbol)
 print('Saved '+str(len(args.filepath))+' csv files to '+str(os.path.split(filepath)[0])+'/processed_files.')

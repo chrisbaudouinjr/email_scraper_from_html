@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='email_scraper_from_html',
-      version='1.0',
+      version='1.0.1',
       description='Generates list of emails scraped from a given HTML file',
       url='https://github.com/jonjonrankin/email_scraper_from_html',
       author='jonjonrankin',
