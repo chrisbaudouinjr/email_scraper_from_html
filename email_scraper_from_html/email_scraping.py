@@ -13,7 +13,7 @@ def get_emails(text, at_symbol):
     		email_regex = r'[\w.-]+@[\w.-]+'
     		return re.findall(email_regex,text)
 	elif at_symbol == 'AT':
-		email_regex = r'[\w.-]+ AT [\w.-]+'
+		email_regex = r'[\w.-]{3} AT cs.rit.edu'
 		return re.findall(email_regex,text)
 
 def save_emails_as_csv(name,emails):
